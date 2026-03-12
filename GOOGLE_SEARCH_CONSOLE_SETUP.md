@@ -31,7 +31,7 @@ This guide will help you set up and verify your website in Google Search Console
 ### 3. **Server Routes Updated**
 - Server now properly serves sitemap.xml and robots.txt
 - Files are served from `client/public/` in development
-- Files are served from `dist/public/` in production
+- Files are served from `public/` (repo root) in production
 
 ---
 
@@ -175,12 +175,12 @@ The sitemap includes all major pages:
 ### Sitemap Not Found
 - Verify the file exists at `client/public/sitemap.xml`
 - Check that the server route is working: visit `/sitemap.xml` directly
-- Ensure the file is copied to `dist/public/` after build
+- Ensure the file is copied to `public/` after build
 
 ### robots.txt Not Found
 - Verify the file exists at `client/public/robots.txt`
 - Check that the server route is working: visit `/robots.txt` directly
-- Ensure the file is copied to `dist/public/` after build
+- Ensure the file is copied to `public/` after build
 
 ### Verification Fails
 - Double-check the verification code/file name matches exactly

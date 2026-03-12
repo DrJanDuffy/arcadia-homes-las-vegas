@@ -15,6 +15,7 @@ yarn-error.log*
 dist/
 build/
 client/dist/
+/public/
 
 # Database files
 *.db

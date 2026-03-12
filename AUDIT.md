@@ -10,12 +10,12 @@
 | Layer | Location | Purpose |
 |-------|----------|---------|
 | **Client (SPA)** | `client/` | Vite + React; entry `client/index.html` → `/src/main.tsx` |
-| **Build (client)** | `vite build` | Output: `dist/public/` (index.html + `assets/*.js`, `assets/*.css`) |
-| **Server (Node)** | `server/` | Express; dev uses Vite middleware, prod uses `serveStatic(app)` → `dist/public` |
+| **Build (client)** | `vite build` | Output: `public/` at repo root (index.html + `assets/*.js`, `assets/*.css`) |
+| **Server (Node)** | `server/` | Express; dev uses Vite middleware, prod uses `serveStatic(app)` → repo-root `public` |
 | **Build (server)** | `esbuild server/index.ts` | Output: `dist/index.js` |
-| **Deploy** | Vercel | Either (A) static from `dist/public` or (B) Node from `dist/index.js` |
+| **Deploy** | Vercel | Either (A) static from `public` or (B) Node from `dist/index.js` |
 
-**Critical:** The HTML the browser receives must be the **built** `dist/public/index.html`, which references `/assets/index-<hash>.js`. The **source** `client/index.html` has `<script src="/src/main.tsx">`, which only works in dev (Vite serves it). In production that path must not be used.
+**Critical:** The HTML the browser receives must be the **built** `public/index.html`, which references `/assets/index-<hash>.js`. The **source** `client/index.html` has `<script src="/src/main.tsx">`, which only works in dev (Vite serves it). In production that path must not be used.
 
 ---
 
@@ -27,7 +27,7 @@ The app fails to mount when:
    If the deployed document is **source** `client/index.html` (or any HTML that still has `src="/src/main.tsx"`), the browser requests `/src/main.tsx`. That file does not exist in a production build (only built assets under `/assets/` exist). Result: script 404 → no React → “Loading…” stays.
 
 2. **Built assets not in the deployment**  
-   If Output Directory is not `dist/public`, then `index.html` and `assets/*` may be in a different path or not deployed. Requests to `/assets/index-xxx.js` get 404 (or are rewritten to index.html). Result: script fails to load or is HTML → app doesn’t run.
+   If Output Directory is not `public`, then `index.html` and `assets/*` may be in a different path or not deployed. Requests to `/assets/index-xxx.js` get 404 (or are rewritten to index.html). Result: script fails to load or is HTML → app doesn’t run.
 
 3. **Runtime error before first paint**  
    Less likely given the 6s fallback: if the main bundle loads but throws during initial execution (e.g. top-level import or `createRoot`), the root is never replaced. ErrorBoundary would only catch errors inside the React tree.
@@ -50,7 +50,7 @@ So rewrites are correct **provided** the build output is the one that contains b
 
 **Required:**
 
-- **Output Directory:** `dist/public`  
+- **Output Directory:** `public`  
   So that the deployed root is exactly what Vite writes: `index.html` and `assets/` with hashed JS/CSS.
 - **Build command:** `npm run build` (or `vite build && esbuild ...` as in package.json).
 - **Root Directory:** leave blank so the build runs from repo root and `vite.config.ts` and `server/` resolve correctly.
@@ -62,16 +62,16 @@ If Output Directory is wrong (e.g. `dist` or empty), the deployed “index.html�
 ## 4. Server vs static on Vercel
 
 - **Static (recommended for this SPA):**  
-  - Output Directory = `dist/public`.  
+  - Output Directory = `public`.  
   - No Node server in the deployment.  
   - All routes (including `/api/*` if any) must be handled by Vercel serverless/API routes if you add them later.
 
 - **Node server:**  
-  - Build produces `dist/index.js` and `dist/public/`.  
-  - You’d need a Vercel Node runtime or serverless that runs `node dist/index.js` and serves from `dist/public`.  
-  - `serveStatic(app)` in `server/vite.ts` serves from `path.resolve(import.meta.dirname, "public")` (i.e. `dist/public` when run from `dist/index.js`). So the same `dist/public` must be available to the server at runtime.
+  - Build produces `dist/index.js` and repo-root `public/`.  
+  - You’d need a Vercel Node runtime or serverless that runs `node dist/index.js` and serves from `public`.  
+  - `serveStatic(app)` in `server/vite.ts` serves from `path.resolve(import.meta.dirname, "..", "public")` (repo-root `public` when run from `dist/index.js`). So the same `public` must be available to the server at runtime.
 
-For “blank page” debugging, the simplest path is: **deploy as static with Output Directory = dist/public** and confirm the app loads. Add or switch to Node later if needed.
+For “blank page” debugging, the simplest path is: **deploy as static with Output Directory = public** and confirm the app loads. Add or switch to Node later if needed.
 
 ---
 
@@ -81,8 +81,8 @@ For “blank page” debugging, the simplest path is: **deploy as static with Ou
 |-------|--------|
 | `client/index.html` script in source | `src="/src/main.tsx"` (dev only). Built output must replace with `/assets/...` (Vite does this). |
 | `vite.config.ts` `root` | `client` – correct. |
-| `vite.config.ts` `build.outDir` | `dist/public` – correct. |
-| `server/vite.ts` `serveStatic` | Serves `dist/public` when run from `dist/` – correct. |
+| `vite.config.ts` `build.outDir` | `public` (repo root) – correct. |
+| `server/vite.ts` `serveStatic` | Serves repo-root `public` when run from `dist/` – correct. |
 | Replit error overlay in prod | Disabled in vite.config when `!isDev && !isReplit` – correct. |
 | Root ErrorBoundary | main.tsx wraps App in ErrorBoundary – correct. |
 | Lazy widgets (chat, Calendly) | Deferred after first paint via DeferredWidgets – reduces risk of chunk failure blocking paint. |
@@ -105,7 +105,7 @@ No top-level client code found that would obviously throw before React mounts (e
 ### 7.1 Vercel (do first)
 
 1. Open project → **Settings** → **General**.
-2. Set **Output Directory** to **`dist/public`** (no trailing slash).
+2. Set **Output Directory** to **`public`** (no trailing slash).
 3. **Root Directory:** leave blank.
 4. **Build Command:** `npm run build` (or keep existing).
 5. **Redeploy** (e.g. latest commit from `main`).
@@ -130,8 +130,8 @@ npm run build
 
 Then:
 
-- Confirm `dist/public/index.html` exists and contains script tags like `src="/assets/index-....js"`.
-- Confirm `dist/public/assets/` contains `index-*.js` (and CSS if any).
+- Confirm `public/index.html` exists and contains script tags like `src="/assets/index-....js"`.
+- Confirm `public/assets/` contains `index-*.js` (and CSS if any).
 
 If this is correct locally but the live site still serves different HTML or 404s for `/assets/*`, the deployment configuration (Output Directory / build step) is still wrong on Vercel.
 

@@ -17,11 +17,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
       "sitemap.xml"
     );
     
-    // In production, try dist/public first
+    // In production, try repo-root public first
     const prodSitemapPath = path.resolve(
       import.meta.dirname,
       "..",
-      "dist",
       "public",
       "sitemap.xml"
     );
@@ -56,11 +55,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
       "robots.txt"
     );
     
-    // In production, try dist/public first
+    // In production, try repo-root public first
     const prodRobotsPath = path.resolve(
       import.meta.dirname,
       "..",
-      "dist",
       "public",
       "robots.txt"
     );

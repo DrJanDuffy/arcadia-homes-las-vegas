@@ -321,7 +321,7 @@
           var src = script ? script.getAttribute('src') : '';
           var hint = '';
           if (src && src.indexOf('/src/main') !== -1) {
-            hint = ' The page is using the dev script path (/src/main.tsx). In production, set Vercel Output Directory to dist/public so the built index and assets are served.';
+            hint = ' The page is using the dev script path (/src/main.tsx). In production, set Vercel Output Directory to public so the built index and assets are served.';
           }
           root.innerHTML = '<div style="text-align:center;padding:2rem;font-family:system-ui,sans-serif;color:#374151;max-width:28rem;margin:0 auto;"><p style="margin-bottom:1rem;">This page is taking longer than usual.</p><p style="margin-bottom:1rem;font-size:0.875rem;color:#6b7280;">Check your connection or try refreshing.</p>' + (hint ? '<p style="margin-bottom:1rem;font-size:0.75rem;color:#6b7280;text-align:left;">' + hint + '</p>' : '') + '<button type="button" onclick="location.reload()" style="padding:0.5rem 1rem;background:#235d8f;color:#fff;border:none;border-radius:0.375rem;cursor:pointer;font-size:0.875rem;">Refresh</button></div>';
         }, 6000);

@@ -6,7 +6,7 @@ Built for **Dr. Jan Duffy** – Summerlin West & Arcadia specialist, Berkshire H
 
 - **Frontend:** React 18, Vite, Wouter, Tailwind CSS, shadcn/ui, TanStack Query
 - **Backend:** Express, Drizzle ORM, PostgreSQL (Neon/Vercel Postgres)
-- **Deploy:** Vercel (output `dist/public`, SPA rewrite in `vercel.json`) – see [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md)
+- **Deploy:** Vercel (output `public`, SPA rewrite in `vercel.json`) – see [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md)
 
 ## Integrations
 
