@@ -70,6 +70,8 @@ export function WhyChooseArcadia() {
             <img
               src={imageUrls.community.golfCourse}
               alt="Red Rock Canyon landscape with dramatic sandstone formations near Arcadia Homes Las Vegas in Summerlin West, showing luxury golf course community"
+              width={800}
+              height={600}
               className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
               loading="lazy"
               decoding="async"

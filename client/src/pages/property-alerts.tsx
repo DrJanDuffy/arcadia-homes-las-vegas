@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { useMetaTags } from "@/hooks/useMetaTags";
+import { useRealScoutScript } from "@/hooks/useRealScoutScript";
 import { addSchemaMarkup } from "@/lib/seo";
 
 export default function PropertyAlerts() {
-  // SEO Meta Tags
+  useRealScoutScript();
   useMetaTags({
     title: "Property Alerts - Arcadia Homes Las Vegas | Never Miss Your Dream Home",
     description: "Get instant alerts when luxury homes in Arcadia Homes Las Vegas match your criteria. Exclusive off-market opportunities and new listings. Be the first to know about price reductions.",

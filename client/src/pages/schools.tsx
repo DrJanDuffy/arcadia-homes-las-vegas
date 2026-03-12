@@ -147,9 +147,13 @@ export default function Schools() {
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1523050854058-8df90110c9d1?auto=format&fit=crop&w=800&q=80"
+                src="https://images.unsplash.com/photo-1523050854058-8df90110c9d1?auto=format&fit=crop&w=800&q=80&fm=webp"
                 alt="Students in classroom"
-                className="rounded-xl shadow-lg"
+                width={800}
+                height={600}
+                className="rounded-xl shadow-lg w-full h-auto"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

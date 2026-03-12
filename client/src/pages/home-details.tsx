@@ -162,9 +162,13 @@ export default function HomeDetails() {
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 h-96 lg:h-[500px]">
             <div className="lg:col-span-3">
               <img
-                src={property.photos[0] || "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"}
+                src={property.photos[0] || "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80&fm=webp"}
                 alt={`Home at ${property.address}`}
+                width={1200}
+                height={800}
                 className="w-full h-full object-cover rounded-xl"
+                fetchPriority="high"
+                decoding="async"
               />
             </div>
             <div className="hidden lg:block space-y-4">
@@ -173,7 +177,11 @@ export default function HomeDetails() {
                   key={index}
                   src={photo}
                   alt={`Home at ${property.address} - Image ${index + 2}`}
+                  width={600}
+                  height={240}
                   className="w-full h-[240px] object-cover rounded-xl"
+                  loading="lazy"
+                  decoding="async"
                 />
               ))}
             </div>

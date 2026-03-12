@@ -174,13 +174,17 @@ export default function FloorPlans() {
                   <img 
                     src={plan.image}
                     alt={plan.name}
+                    width={800}
+                    height={512}
                     className="w-full h-64 object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute top-4 right-4 flex space-x-2">
-                    <button className="bg-white bg-opacity-80 p-2 rounded-full hover:bg-opacity-100 transition-all">
+                    <button type="button" className="bg-white bg-opacity-80 p-2 rounded-full hover:bg-opacity-100 transition-all" aria-label="Save to favorites">
                       <Heart className="w-5 h-5 text-gray-600" />
                     </button>
-                    <button className="bg-white bg-opacity-80 p-2 rounded-full hover:bg-opacity-100 transition-all">
+                    <button type="button" className="bg-white bg-opacity-80 p-2 rounded-full hover:bg-opacity-100 transition-all" aria-label="Share floor plan">
                       <Share2 className="w-5 h-5 text-gray-600" />
                     </button>
                   </div>

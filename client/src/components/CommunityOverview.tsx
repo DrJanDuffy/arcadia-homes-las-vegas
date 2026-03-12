@@ -21,6 +21,8 @@ export function CommunityOverview() {
               <img
                 src={imageUrls.community.neighborhoods}
                 alt="Aerial view of Arcadia Homes Las Vegas luxury community showing guard-gated homes with Red Rock Canyon views in Summerlin West 89135"
+                width={800}
+                height={600}
                 className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
                 decoding="async"

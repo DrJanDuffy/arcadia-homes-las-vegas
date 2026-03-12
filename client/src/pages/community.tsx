@@ -114,9 +114,13 @@ export default function Community() {
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1000&q=80"
+                src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1000&q=80&fm=webp"
                 alt="Arcadia Homes Las Vegas community aerial view"
-                className="rounded-xl shadow-lg"
+                width={1000}
+                height={667}
+                className="rounded-xl shadow-lg w-full h-auto"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -188,9 +192,13 @@ export default function Community() {
               {amenities?.map((amenity) => (
                 <div key={amenity.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                   <img
-                    src={amenity.imageUrl || "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80"}
+                    src={amenity.imageUrl || "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80&fm=webp"}
                     alt={amenity.name}
+                    width={800}
+                    height={400}
                     className="w-full h-48 object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="p-6">
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">{amenity.name}</h3>

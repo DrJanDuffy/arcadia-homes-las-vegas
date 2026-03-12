@@ -196,9 +196,13 @@ export default function Amenities() {
                     {amenityList.map((amenity) => (
                       <div key={amenity.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                         <img
-                          src={amenity.imageUrl || "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80"}
+                          src={amenity.imageUrl || "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80&fm=webp"}
                           alt={amenity.name}
+                          width={800}
+                          height={400}
                           className="w-full h-48 object-cover"
+                          loading="lazy"
+                          decoding="async"
                         />
                         <div className="p-6">
                           <h3 className="text-xl font-semibold text-gray-900 mb-2">{amenity.name}</h3>
@@ -258,9 +262,13 @@ export default function Amenities() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="relative rounded-xl overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80"
+                src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80&fm=webp"
                 alt="Red Rock Canyon"
+                width={800}
+                height={512}
                 className="w-full h-64 object-cover"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end">
                 <div className="p-6 text-white">
@@ -275,9 +283,13 @@ export default function Amenities() {
 
             <div className="relative rounded-xl overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80"
+                src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80&fm=webp"
                 alt="Downtown Summerlin"
+                width={800}
+                height={512}
                 className="w-full h-64 object-cover"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end">
                 <div className="p-6 text-white">

@@ -17,7 +17,7 @@ export const arcadiaReviews: Review[] = [
     location: "Las Vegas, NV",
     rating: 5,
     text: "Dr. Duffy made our home buying experience seamless. Her knowledge of the Arcadia Homes Las Vegas and Summerlin West market is unmatched, and she guided us through every step with professionalism and care.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&q=80&fm=webp",
     date: "2025-11-15",
   },
   {
@@ -26,7 +26,7 @@ export const arcadiaReviews: Review[] = [
     location: "Summerlin West, NV",
     rating: 5,
     text: "We couldn't be happier with our new home in Arcadia! The entire process was smooth, and Dr. Duffy's attention to detail and negotiation skills saved us thousands. Highly recommend!",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=96&h=96&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=96&h=96&fit=crop&q=80&fm=webp",
     date: "2025-10-22",
   },
   {
@@ -35,7 +35,7 @@ export const arcadiaReviews: Review[] = [
     location: "Arcadia Homes Las Vegas",
     rating: 5,
     text: "As first-time luxury buyers, we were nervous. Dr. Duffy patiently explained everything and helped us find the perfect Arcadia estate in our budget. Thank you!",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=96&h=96&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=96&h=96&fit=crop&q=80&fm=webp",
     date: "2025-09-08",
   },
 ];
@@ -106,6 +106,8 @@ export function ReviewsSection({
                     <img
                       src={review.image}
                       alt={review.name}
+                      width={96}
+                      height={96}
                       className="w-full h-full object-cover"
                       loading="lazy"
                     />

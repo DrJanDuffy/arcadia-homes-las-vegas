@@ -126,6 +126,8 @@ export default function About() {
               <img
                 src={imageUrls.about.professional}
                 alt="Dr. Jan Duffy, Arcadia Homes Las Vegas real estate specialist in Summerlin West"
+                width={800}
+                height={600}
                 className="rounded-xl shadow-lg w-full h-auto"
                 loading="lazy"
                 decoding="async"
@@ -401,9 +403,13 @@ export default function About() {
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?auto=format&fit=crop&w=800&q=80"
+                src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?auto=format&fit=crop&w=800&q=80&fm=webp"
                 alt="Dr. Duffy in her office"
-                className="rounded-xl shadow-lg"
+                width={800}
+                height={600}
+                className="rounded-xl shadow-lg w-full h-auto"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

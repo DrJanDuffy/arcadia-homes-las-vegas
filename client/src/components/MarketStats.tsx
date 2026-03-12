@@ -40,12 +40,14 @@ export function MarketStats() {
               <div className="h-6 bg-gray-200 rounded w-96 mx-auto"></div>
             </div>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="space-y-6">
-              <div className="h-64 bg-gray-100 rounded-xl animate-pulse"></div>
+          {/* Skeleton matches loaded layout height to reduce CLS (Price Trend Analysis area reserved) */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 min-h-[380px]">
+            <div className="space-y-8">
+              <div className="h-44 bg-gray-100 rounded-xl animate-pulse"></div>
+              <div className="h-36 bg-gray-100 rounded-xl animate-pulse"></div>
             </div>
-            <div className="space-y-6">
-              <div className="h-64 bg-gray-100 rounded-xl animate-pulse"></div>
+            <div className="min-h-[280px] flex items-center justify-center">
+              <div className="h-full w-full max-h-[280px] bg-gray-100 rounded-xl animate-pulse"></div>
             </div>
           </div>
         </div>
@@ -134,8 +136,8 @@ export function MarketStats() {
               </div>
             </div>
 
-            {/* Chart Placeholder */}
-            <div className="bg-gray-50 rounded-xl p-8 flex items-center justify-center">
+            {/* Chart Placeholder (min-height to reduce CLS) */}
+            <div className="bg-gray-50 rounded-xl p-8 flex items-center justify-center min-h-[280px]">
               <div className="text-center">
                 <TrendingUp className="w-24 h-24 text-primary/40 mx-auto mb-4" />
                 <h4 className="text-xl font-semibold text-gray-700 mb-2">Price Trend Analysis</h4>
@@ -267,8 +269,8 @@ export function MarketStats() {
             </div>
           </div>
 
-          {/* Chart Placeholder */}
-          <div className="bg-gray-50 rounded-xl p-8 flex items-center justify-center">
+          {/* Chart Placeholder (min-height to match skeleton and reduce CLS) */}
+          <div className="bg-gray-50 rounded-xl p-8 flex items-center justify-center min-h-[280px]">
             <div className="text-center">
               <TrendingUp className="w-24 h-24 text-primary/40 mx-auto mb-4" />
               <h4 className="text-xl font-semibold text-gray-700 mb-2">Price Trend Analysis</h4>

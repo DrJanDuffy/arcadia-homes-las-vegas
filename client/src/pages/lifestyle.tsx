@@ -130,7 +130,11 @@ export default function Lifestyle() {
                   <img 
                     src={activity.image}
                     alt={activity.title}
+                    width={800}
+                    height={533}
                     className="rounded-xl shadow-lg w-full h-80 object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className={`space-y-6 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>

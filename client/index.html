@@ -210,9 +210,9 @@
     }
     </script>
     
-    <!-- Home Valuation Tools Scripts -->
-    <script src="https://em.realscout.com/widgets/realscout-web-components.umd.js" type="module"></script>
-    <script src='https://cdn.jsdelivr.net/npm/@percy.ai/hvs-autocomplete@latest/dist/umd/index.bundled.min.js'></script>
+    <!-- RealScout loaded on demand via useRealScoutScript (home, homes, home-value, property-alerts) -->
+    <!-- Home Valuation Tools: Percy autocomplete (defer) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@percy.ai/hvs-autocomplete@latest/dist/umd/index.bundled.min.js"></script>
     <script>
       (function (h,b) { 
         var w = window, d = document, s = 'script', x, y; 
@@ -226,17 +226,20 @@
       })('Homebot','https://embed.homebotapp.com/lgw/v1/widget.js');
     </script>
     
-    <!-- Google tag (gtag.js) - Optimized for Core Web Vitals -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXEYVBCMLS"></script>
+    <!-- Google tag (gtag.js) - Deferred until after load to reduce main-thread work -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-RXEYVBCMLS', {
-        'send_page_view': true,
-        'anonymize_ip': true,
-        'cookie_flags': 'SameSite=None;Secure'
-      });
+      function loadGtag() {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-RXEYVBCMLS';
+        document.head.appendChild(s);
+        gtag('js', new Date());
+        gtag('config', 'G-RXEYVBCMLS', { send_page_view: true, anonymize_ip: true, cookie_flags: 'SameSite=None;Secure' });
+      }
+      if (requestIdleCallback) requestIdleCallback(loadGtag, { timeout: 2500 });
+      else setTimeout(loadGtag, 1500);
     </script>
     
     <!-- RealScout Widget Styling -->
@@ -280,25 +283,41 @@
         font-family: inherit;
       }
       
-      /* Loading state for RealScout widgets */
+      /* Loading state for RealScout widgets (compositor-friendly: transform only) */
       realscout-office-listings:not(:defined) {
         min-height: 400px;
         display: block;
-        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-        background-size: 200% 100%;
-        animation: loading 1.5s infinite;
+        background: #f0f0f0;
+        position: relative;
+        overflow: hidden;
       }
-      
-      @keyframes loading {
-        0% { background-position: 200% 0; }
-        100% { background-position: -200% 0; }
+      realscout-office-listings:not(:defined)::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, transparent 0%, rgba(224,224,224,0.8) 50%, transparent 100%);
+        transform: translateX(-100%);
+        animation: loadingShimmer 1.5s ease-in-out infinite;
+      }
+      @keyframes loadingShimmer {
+        100% { transform: translateX(100%); }
       }
     </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
-    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
+    <!-- Replit dev banner: load only on Replit or localhost to avoid blocking production -->
+    <script>
+      (function() {
+        var h = window.location.hostname;
+        if (h.indexOf('replit') !== -1 || h === 'localhost' || h === '127.0.0.1') {
+          var s = document.createElement('script');
+          s.src = 'https://replit.com/public/js/replit-dev-banner.js';
+          s.async = true;
+          document.body.appendChild(s);
+        }
+      })();
+    </script>
   </body>
 </html><!-- Deployment trigger Wed 28 May 2025 12:22:41 AM UTC -->

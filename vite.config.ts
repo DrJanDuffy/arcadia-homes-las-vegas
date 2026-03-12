@@ -29,5 +29,19 @@ export default defineConfig({
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
     copyPublicDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks: (id) => {
+          if (id.includes("node_modules")) {
+            if (id.includes("react-dom")) return "react-dom";
+            if (id.includes("react")) return "react";
+            if (id.includes("@tanstack/react-query")) return "query";
+            if (id.includes("wouter")) return "router";
+            if (id.includes("framer-motion") || id.includes("recharts")) return "charts-motion";
+            return "vendor";
+          }
+        },
+      },
+    },
   },
 });

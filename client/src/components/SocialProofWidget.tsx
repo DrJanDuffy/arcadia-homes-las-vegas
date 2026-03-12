@@ -53,9 +53,11 @@ export function SocialProofWidget() {
             <div className="bg-white rounded-lg p-4 shadow-sm">
               <div className="flex items-center mb-3">
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&q=80"
-                  alt="Client"
-                  className="w-10 h-10 rounded-full mr-3"
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&q=80&fm=webp"
+                  alt="Michael Chen"
+                  width={50}
+                  height={50}
+                  className="w-10 h-10 rounded-full mr-3 object-cover"
                 />
                 <div>
                   <div className="font-semibold text-sm">Michael Chen</div>
@@ -74,9 +76,11 @@ export function SocialProofWidget() {
             <div className="bg-white rounded-lg p-4 shadow-sm">
               <div className="flex items-center mb-3">
                 <img 
-                  src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&q=80"
-                  alt="Client"
-                  className="w-10 h-10 rounded-full mr-3"
+                  src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&q=80&fm=webp"
+                  alt="Linda Martinez"
+                  width={50}
+                  height={50}
+                  className="w-10 h-10 rounded-full mr-3 object-cover"
                 />
                 <div>
                   <div className="font-semibold text-sm">Linda Martinez</div>
@@ -95,9 +99,11 @@ export function SocialProofWidget() {
             <div className="bg-white rounded-lg p-4 shadow-sm">
               <div className="flex items-center mb-3">
                 <img 
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&q=80"
-                  alt="Client"
-                  className="w-10 h-10 rounded-full mr-3"
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&q=80&fm=webp"
+                  alt="David Thompson"
+                  width={50}
+                  height={50}
+                  className="w-10 h-10 rounded-full mr-3 object-cover"
                 />
                 <div>
                   <div className="font-semibold text-sm">David Thompson</div>

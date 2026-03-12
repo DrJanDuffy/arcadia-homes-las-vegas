@@ -1,9 +1,9 @@
-import { useEffect } from "react";
 import { useMetaTags } from "@/hooks/useMetaTags";
+import { useRealScoutScript } from "@/hooks/useRealScoutScript";
 import { addSchemaMarkup } from "@/lib/seo";
 
 export default function HomeValue() {
-  // SEO Meta Tags
+  useRealScoutScript();
   useMetaTags({
     title: "Free Home Valuation - Arcadia Homes Las Vegas | Instant Property Value",
     description: "Get a free, instant home valuation for your Arcadia Homes Las Vegas property. Expert market analysis from Dr. Jan Duffy. Accurate estimates using latest MLS data.",

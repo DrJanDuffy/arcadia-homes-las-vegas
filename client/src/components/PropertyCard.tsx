@@ -28,8 +28,10 @@ export const PropertyCard = memo(function PropertyCard({ property }: PropertyCar
       >
         <div className="relative group overflow-hidden">
           <img
-            src={property.imageUrl || "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"}
+            src={property.imageUrl || "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&fm=webp"}
             alt={`${property.bedrooms} bedroom, ${formatDecimal(property.bathrooms)} bathroom home at ${property.address} in Arcadia Homes Las Vegas`}
+            width={800}
+            height={512}
             className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
             loading="lazy"
             decoding="async"

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { useMetaTags } from "@/hooks/useMetaTags";
+import { useRealScoutScript } from "@/hooks/useRealScoutScript";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { addSchemaMarkup, generateFAQSchema } from "@/lib/seo";
 
@@ -81,27 +82,7 @@ export default function Homes() {
     };
   }, []);
 
-  // Ensure RealScout script is loaded
-  useEffect(() => {
-    const checkScript = () => {
-      // Check if script already exists
-      const existingScript = document.querySelector('script[src*="realscout-web-components"]');
-      if (existingScript) return;
-      
-      // Check if custom elements are already defined
-      if (customElements.get('realscout-office-listings')) return;
-
-      // Load script if not present
-      const realScoutScript = document.createElement('script');
-      realScoutScript.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
-      realScoutScript.type = 'module';
-      document.head.appendChild(realScoutScript);
-    };
-
-    checkScript();
-    const timer = setTimeout(checkScript, 500);
-    return () => clearTimeout(timer);
-  }, []);
+  useRealScoutScript();
 
   return (
     <div className="pt-20">

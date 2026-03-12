@@ -19,9 +19,12 @@ export function Hero() {
         <img
           src={imageUrls.hero.luxuryHome}
           alt="Luxury home in Arcadia Homes Las Vegas Summerlin with Red Rock Canyon views"
+          width={1920}
+          height={1080}
           className="w-full h-full object-cover"
           fetchPriority="high"
           loading="eager"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       </div>

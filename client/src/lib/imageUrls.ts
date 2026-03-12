@@ -5,10 +5,10 @@
  */
 
 export const imageUrls = {
-  // Hero & Main Images
+  // Hero & Main Images (format=1200w for LCP/hero to reduce transfer size)
   hero: {
-    luxuryHome: "https://images.squarespace-cdn.com/content/v1/5fb449ff821d2b5bd579a0eb/1628790748571-H91ZHOUP6K8M31RFOY0M/luxury+homes.jpg?format=1500w",
-    singleFamily: "https://images.squarespace-cdn.com/content/v1/5fb449ff821d2b5bd579a0eb/1628790963337-1XUN5V4BNZC035HGT2JZ/single-family-home.jpg?format=1500w",
+    luxuryHome: "https://images.squarespace-cdn.com/content/v1/5fb449ff821d2b5bd579a0eb/1628790748571-H91ZHOUP6K8M31RFOY0M/luxury+homes.jpg?format=1200w",
+    singleFamily: "https://images.squarespace-cdn.com/content/v1/5fb449ff821d2b5bd579a0eb/1628790963337-1XUN5V4BNZC035HGT2JZ/single-family-home.jpg?format=1200w",
   },
   
   // Community Images
@@ -39,11 +39,11 @@ export const imageUrls = {
     boulderCity: "https://images.squarespace-cdn.com/content/v1/5fb449ff821d2b5bd579a0eb/1628791252484-DTD9SH02Y9P30O0B3CW3/boulder+city.jpg?format=1500w",
   },
   
-  // About/Professional
+  // About/Professional (1200w for smaller transfer)
   about: {
     // Note: Professional headshot would need to be added separately
     // Using luxury homes as placeholder for now
-    professional: "https://images.squarespace-cdn.com/content/v1/5fb449ff821d2b5bd579a0eb/1628790748571-H91ZHOUP6K8M31RFOY0M/luxury+homes.jpg?format=1500w",
+    professional: "https://images.squarespace-cdn.com/content/v1/5fb449ff821d2b5bd579a0eb/1628790748571-H91ZHOUP6K8M31RFOY0M/luxury+homes.jpg?format=1200w",
   },
 } as const;
 

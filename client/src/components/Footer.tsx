@@ -33,6 +33,8 @@ export function Footer() {
                 <img 
                   src="https://www.berkshirehathawayhs.com/wp-content/uploads/2021/06/BHHSNV-Logo-White.png" 
                   alt="Berkshire Hathaway HomeServices Nevada Properties" 
+                  width={160}
+                  height={40}
                   className="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity"
                   onError={(e) => {
                     // Fallback to a text-based version if image fails to load

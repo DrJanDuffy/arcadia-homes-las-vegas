@@ -70,6 +70,8 @@ export function AboutDrDuffy() {
             <img
               src={imageUrls.about.professional}
               alt="Dr. Jan Duffy, licensed real estate agent and Arcadia Homes Las Vegas specialist in Summerlin West, Nevada License #BS.0145678"
+              width={800}
+              height={600}
               className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
               loading="lazy"
               decoding="async"
