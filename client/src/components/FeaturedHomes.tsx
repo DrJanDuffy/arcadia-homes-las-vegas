@@ -37,11 +37,10 @@ export function FeaturedHomes() {
       <div className="container-max">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-            Available Homes
+            Featured Properties
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover luxury homes currently available in Arcadia Homes Las Vegas community. 
-            Live MLS listings updated in real-time.
+            Discover exceptional homes in Arcadia Homes Las Vegas. Live MLS listings updated in real-time.
           </p>
         </div>
 

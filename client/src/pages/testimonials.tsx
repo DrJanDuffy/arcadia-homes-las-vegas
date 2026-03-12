@@ -1,7 +1,8 @@
 import { useEffect } from "react";
-import { Star, Quote } from "lucide-react";
+import { Star } from "lucide-react";
 import { useMetaTags } from "@/hooks/useMetaTags";
-import { addSchemaMarkup, generateReviewSchema } from "@/lib/seo";
+import { addSchemaMarkup } from "@/lib/seo";
+import { ReviewsSection, type Review } from "@/components/sections/ReviewsSection";
 
 export default function Testimonials() {
   // SEO Meta Tags
@@ -130,48 +131,21 @@ export default function Testimonials() {
         </div>
       </section>
 
-      {/* Testimonials Grid */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">What Our Clients Say</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Read authentic reviews from Arcadia Homes Las Vegas residents who trusted Dr. Jan Duffy 
-              with their luxury real estate investment.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial) => (
-              <div key={testimonial.id} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
-                <div className="flex items-center mb-4">
-                  <img 
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover mr-4"
-                  />
-                  <div className="flex-1">
-                    <h3 className="font-semibold text-gray-900">{testimonial.name}</h3>
-                    <p className="text-sm text-gray-600">{testimonial.location}</p>
-                  </div>
-                  <div className="flex items-center">
-                    {Array.from({ length: testimonial.rating }).map((_, i) => (
-                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                </div>
-                
-                <div className="relative">
-                  <Quote className="w-8 h-8 text-primary/20 absolute -top-2 -left-2" />
-                  <p className="text-gray-700 italic pl-6 mb-4">"{testimonial.text}"</p>
-                </div>
-                
-                <div className="text-sm text-gray-500">{testimonial.date}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Testimonials Grid - HeyBerkshire-style ReviewsSection */}
+      <ReviewsSection
+        reviews={testimonials.map((t): Review => ({
+          id: t.id,
+          name: t.name,
+          location: t.location,
+          rating: t.rating,
+          text: t.text,
+          image: t.image,
+          date: t.date,
+        }))}
+        title="What Our Clients Say"
+        subtitle="Read authentic reviews from Arcadia Homes Las Vegas residents who trusted Dr. Jan Duffy with their luxury real estate investment."
+        googleReviewsUrl="https://www.google.com/search?q=Dr+Jan+Duffy+Arcadia+Homes+Las+Vegas"
+      />
 
       {/* Video Testimonials */}
       <section className="py-20 bg-white">

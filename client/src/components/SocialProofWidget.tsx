@@ -7,9 +7,9 @@ export function SocialProofWidget() {
         {/* Social Proof Header */}
         <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-            Trusted by Luxury Home Buyers
+            What Our Clients Say
           </h2>
-          <p className="text-gray-600">Join exclusive clients who chose Arcadia Homes Las Vegas</p>
+          <p className="text-gray-600">Real testimonials from satisfied clients in Arcadia Homes Las Vegas</p>
         </div>
 
         {/* Stats Grid */}
@@ -113,6 +113,19 @@ export function SocialProofWidget() {
               </p>
             </div>
           </div>
+        </div>
+
+        {/* Google Reviews CTA */}
+        <div className="mt-8 text-center">
+          <a
+            href="https://www.google.com/search?q=Dr+Jan+Duffy+Arcadia+Homes+Las+Vegas"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
+          >
+            Read More Reviews on Google
+            <span aria-hidden>→</span>
+          </a>
         </div>
 
         {/* Awards Banner */}

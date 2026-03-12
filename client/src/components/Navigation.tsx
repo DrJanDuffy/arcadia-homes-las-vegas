@@ -11,20 +11,20 @@ export function Navigation() {
     { name: "Home", href: "/" },
     { name: "Available Homes", href: "/homes" },
     { name: "Floor Plans", href: "/floor-plans" },
+    { name: "Gallery", href: "/gallery" },
     { name: "Community", href: "/community" },
     { name: "Neighborhood", href: "/neighborhood" },
     { name: "Lifestyle", href: "/lifestyle" },
-    { name: "Gallery", href: "/gallery" },
-    { name: "Virtual Tours", href: "/virtual-tours" },
-    { name: "Buying Guide", href: "/buying-guide" },
-    { name: "Selling Guide", href: "/selling-guide" },
-    { name: "Investment", href: "/investment" },
-    { name: "Relocation", href: "/relocation" },
-    { name: "Resources", href: "/resources" },
-    { name: "Testimonials", href: "/testimonials" },
     { name: "Amenities", href: "/amenities" },
     { name: "Schools", href: "/schools" },
+    { name: "Testimonials", href: "/testimonials" },
     { name: "Market Report", href: "/market-report" },
+    { name: "Home Value", href: "/home-value" },
+    { name: "Property Alerts", href: "/property-alerts" },
+    { name: "Mortgage Calculator", href: "/mortgage-calculator" },
+    { name: "Buying Guide", href: "/buying-guide" },
+    { name: "Selling Guide", href: "/selling-guide" },
+    { name: "Resources", href: "/resources" },
     { name: "About Dr. Duffy", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
@@ -45,7 +45,7 @@ export function Navigation() {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - HeyBerkshire-style: Home, Properties, Neighborhoods, About, Contact + Services */}
           <div className="hidden lg:flex items-center space-x-6">
             <Link
               href="/"
@@ -56,32 +56,30 @@ export function Navigation() {
             >
               Home
             </Link>
-            
-            {/* Properties Dropdown */}
+
             <div className="relative group">
-              <button className="font-medium transition-colors hover:text-primary text-gray-700 flex items-center">
+              <button type="button" className="font-medium transition-colors hover:text-primary text-gray-700 flex items-center" aria-haspopup="true" aria-expanded="false">
                 Properties
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               <div className="absolute top-full left-0 mt-2 w-52 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border">
                 <Link href="/homes" className="block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors rounded-t-lg">Available Homes</Link>
                 <Link href="/floor-plans" className="block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors">Floor Plans</Link>
-                <Link href="/gallery" className="block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors rounded-b-lg">Photo Gallery</Link>
+                <Link href="/gallery" className="block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors rounded-b-lg">Gallery</Link>
               </div>
             </div>
 
-            {/* Community Dropdown */}
             <div className="relative group">
-              <button className="font-medium transition-colors hover:text-primary text-gray-700 flex items-center">
-                Community
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <button type="button" className="font-medium transition-colors hover:text-primary text-gray-700 flex items-center" aria-haspopup="true" aria-expanded="false">
+                Neighborhoods
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               <div className="absolute top-full left-0 mt-2 w-52 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border">
-                <Link href="/community" className="block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors rounded-t-lg">About Arcadia Homes Las Vegas</Link>
+                <Link href="/community" className="block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors rounded-t-lg">Arcadia Community</Link>
                 <Link href="/neighborhood" className="block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors">Neighborhood</Link>
                 <Link href="/lifestyle" className="block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors">Lifestyle</Link>
                 <Link href="/amenities" className="block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors">Amenities</Link>
@@ -89,90 +87,36 @@ export function Navigation() {
               </div>
             </div>
 
-            <Link
-              href="/testimonials"
-              className={cn(
-                "font-medium transition-colors hover:text-primary",
-                location === "/testimonials" ? "text-primary" : "text-gray-700"
-              )}
-            >
-              Testimonials
+            <Link href="/about" className={cn("font-medium transition-colors hover:text-primary", location === "/about" ? "text-primary" : "text-gray-700")}>
+              About
             </Link>
 
-            <Link
-              href="/market-report"
-              className={cn(
-                "font-medium transition-colors hover:text-primary",
-                location === "/market-report" ? "text-primary" : "text-gray-700"
-              )}
-            >
-              Market Report
-            </Link>
-
-            <Link
-              href="/home-value"
-              className={cn(
-                "font-medium transition-colors hover:text-primary bg-yellow-50 px-3 py-1 rounded-lg border border-yellow-200",
-                location === "/home-value" ? "text-primary bg-yellow-100" : "text-gray-700"
-              )}
-            >
-              🏡 Home Value
-            </Link>
-
-            <Link
-              href="/property-alerts"
-              className={cn(
-                "font-medium transition-colors hover:text-primary bg-red-50 px-3 py-1 rounded-lg border border-red-200 pulse",
-                location === "/property-alerts" ? "text-primary bg-red-100" : "text-gray-700"
-              )}
-            >
-              🚨 Property Alerts
-            </Link>
-
-            <Link
-              href="/mortgage-calculator"
-              className={cn(
-                "font-medium transition-colors hover:text-primary bg-blue-50 px-3 py-1 rounded-lg border border-blue-200",
-                location === "/mortgage-calculator" ? "text-primary bg-blue-100" : "text-gray-700"
-              )}
-            >
-              🧮 Mortgage Calculator
-            </Link>
-
-            <Link
-              href="/market-predictions"
-              className={cn(
-                "font-medium transition-colors hover:text-primary bg-purple-50 px-3 py-1 rounded-lg border border-purple-200 animate-pulse",
-                location === "/market-predictions" ? "text-primary bg-purple-100" : "text-gray-700"
-              )}
-            >
-              🔮 Market Predictions
-            </Link>
-
-            <Link
-              href="/about"
-              className={cn(
-                "font-medium transition-colors hover:text-primary",
-                location === "/about" ? "text-primary" : "text-gray-700"
-              )}
-            >
-              About Dr. Duffy
-            </Link>
-
-            <Link
-              href="/contact"
-              className="btn-primary flex items-center space-x-2"
-            >
+            <Link href="/contact" className="btn-primary flex items-center space-x-2">
               <Phone className="w-4 h-4" />
               <span>Contact</span>
             </Link>
+
+            <div className="relative group">
+              <button type="button" className="font-medium transition-colors hover:text-primary text-gray-700 flex items-center" aria-haspopup="true" aria-expanded="false">
+                Services
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className="absolute top-full left-0 mt-2 w-52 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border">
+                <Link href="/home-value" className="block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors rounded-t-lg">Home Value</Link>
+                <Link href="/market-report" className="block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors">Market Report</Link>
+                <Link href="/property-alerts" className="block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors">Property Alerts</Link>
+                <Link href="/mortgage-calculator" className="block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors rounded-b-lg">Mortgage Calculator</Link>
+              </div>
+            </div>
           </div>
 
           {/* Mobile menu button */}
           <button
+            type="button"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isOpen}
             className="lg:hidden p-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

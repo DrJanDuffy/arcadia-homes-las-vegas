@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { Phone, Mail, MapPin, Clock, MessageSquare, Calendar } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
+import { CalendlyButton, CalendlyWidget } from "@/components/calendly";
+import { LeadCaptureForm } from "@/components/forms/LeadCaptureForm";
 import { useMetaTags } from "@/hooks/useMetaTags";
 import { addSchemaMarkup, generateFAQSchema } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -147,7 +149,7 @@ export default function Contact() {
               {/* Quick Contact Options */}
               <div className="bg-gray-50 rounded-xl p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Quick Contact</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <a
                     href="tel:702-500-0337"
                     className="flex items-center justify-center space-x-2 btn-primary"
@@ -156,12 +158,20 @@ export default function Contact() {
                     <span>Call Now</span>
                   </a>
                   <a
-                      href="mailto:DrDuffy@arcadiahomeslasvegas.com"
+                    href="mailto:DrDuffy@arcadiahomeslasvegas.com"
                     className="flex items-center justify-center space-x-2 btn-secondary"
                   >
                     <Mail className="w-4 h-4" />
                     <span>Send Email</span>
                   </a>
+                  <CalendlyButton
+                    url="https://calendly.com/drjanduffy/showing"
+                    text="Schedule a showing"
+                    className="flex items-center justify-center space-x-2 bg-primary text-primary-foreground px-6 py-3 rounded-md font-semibold hover:bg-primary/90 transition-colors"
+                  >
+                    <Calendar className="w-4 h-4" />
+                    <span>Schedule a showing</span>
+                  </CalendlyButton>
                 </div>
               </div>
             </div>
@@ -176,6 +186,46 @@ export default function Contact() {
               </p>
               <ContactForm />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Arcadia property inquiry - LeadCaptureForm from heyberkshire.com */}
+      <section className="py-20 bg-white">
+        <div className="container-max">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-display font-bold text-gray-900 mb-6">
+                Looking for a Home in Arcadia?
+              </h2>
+              <p className="text-xl text-gray-600">
+                Share your criteria and Dr. Duffy will match you with Arcadia Homes Las Vegas listings ($2M–$4M).
+              </p>
+            </div>
+            <div className="bg-gray-50 rounded-xl p-8">
+              <LeadCaptureForm
+                formType="property-search"
+                source="contact-arcadia-inquiry"
+                defaultInterest="buying"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Schedule a showing - Calendly widget from heyberkshire.com */}
+      <section className="py-20 bg-gray-50">
+        <div className="container-max">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-display font-bold text-gray-900 mb-6">
+              Schedule a Showing
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Book a time that works for you. Dr. Duffy will confirm your Arcadia Homes Las Vegas showing.
+            </p>
+          </div>
+          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8">
+            <CalendlyWidget url="https://calendly.com/drjanduffy/showing" height="700px" />
           </div>
         </div>
       </section>

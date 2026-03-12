@@ -4,6 +4,8 @@ import { type MarketData } from "@shared/schema";
 import { formatPrice, formatNumber } from "@/lib/utils";
 import { ArrowDown } from "lucide-react";
 import { imageUrls } from "@/lib/imageUrls";
+import { trackButtonClick } from "@/lib/analytics";
+import { AnalyticsAnchor } from "@/components/AnalyticsLink";
 
 export function Hero() {
   const { data: marketData } = useQuery<MarketData>({
@@ -26,17 +28,32 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 text-center text-white container-max px-4 animate-fade-in">
-        <h1 className="text-5xl md:text-7xl font-display font-bold mb-6">
-          Arcadia Homes Las Vegas
-          <span className="block text-3xl md:text-4xl text-yellow-300 mt-2">
-            Luxury Living in Summerlin West
+        <h1 className="text-5xl md:text-7xl font-display font-bold mb-4">
+          Find Your Dream Home in
+          <span className="block text-3xl md:text-5xl text-yellow-300 mt-2">
+            Arcadia Homes Las Vegas
           </span>
         </h1>
         
         <p className="text-xl md:text-2xl mb-6 max-w-3xl mx-auto leading-relaxed">
-          <span className="text-yellow-300 font-semibold">$2M-$4M Custom Estates</span> in Summerlin West's exclusive 89135 ZIP code, 
-          with Red Rock Canyon views and 24/7 guard-gated security.
+          Expert real estate in Summerlin West&apos;s guard-gated community. $2M–$4M custom estates with Red Rock Canyon views and 24/7 security.
         </p>
+
+        {/* HeyBerkshire-style stat bar */}
+        <div className="flex flex-wrap justify-center gap-8 md:gap-12 mb-8 text-white/95">
+          <div>
+            <span className="text-2xl md:text-3xl font-bold text-yellow-300">45+</span>
+            <span className="block text-sm font-medium">Homes in Community</span>
+          </div>
+          <div>
+            <span className="text-2xl md:text-3xl font-bold text-yellow-300">Since 2008</span>
+            <span className="block text-sm font-medium">Serving Summerlin West</span>
+          </div>
+          <div>
+            <span className="text-2xl md:text-3xl font-bold text-yellow-300">4.9★</span>
+            <span className="block text-sm font-medium">Average Rating</span>
+          </div>
+        </div>
 
         {/* Value Proposition Bullets */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 max-w-4xl mx-auto text-sm md:text-base">
@@ -50,7 +67,7 @@ export function Hero() {
           </div>
           <div className="flex items-center justify-center space-x-2 bg-white bg-opacity-10 rounded-lg px-4 py-2">
             <span className="text-yellow-300">✓</span>
-            <span>Dr. Duffy - 15 years local expert</span>
+            <span>Dr. Duffy – 15 years local expert</span>
           </div>
         </div>
 

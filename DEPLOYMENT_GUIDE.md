@@ -34,6 +34,8 @@
    DATABASE_URL=your_postgresql_connection_string
    NODE_ENV=production
    ```
+   Optional (for AI chat on the site):
+   - `OPENROUTER_API_KEY` – When set, the floating chat uses OpenRouter (e.g. Claude) for replies; when unset, chat returns a friendly message with Dr. Duffy’s contact info.
 
 ## Step 3: Domain Setup
 

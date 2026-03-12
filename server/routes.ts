@@ -79,6 +79,58 @@ Sitemap: https://www.arcadiahomeslasvegas.com/sitemap.xml`);
     }
   });
 
+  // Chat API (AIChatWidget) - optional OpenRouter AI; fallback stub
+  app.post("/api/chat", async (req, res) => {
+    try {
+      const body = req.body as { prompt?: string; conversation?: { role: string; content: string }[] };
+      const prompt = typeof body?.prompt === "string" ? body.prompt.trim() : "";
+      const conversation = Array.isArray(body?.conversation) ? body.conversation : [];
+
+      const fallbackReply =
+        "Thanks for your message! For the best help with Arcadia Homes Las Vegas, Summerlin West, or scheduling a showing, please call or text Dr. Jan Duffy at (702) 500-0337 or email DrDuffy@arcadiahomeslasvegas.com. She'll get back to you quickly.";
+
+      const apiKey = process.env.OPENROUTER_API_KEY;
+      if (apiKey && prompt) {
+        const messages: { role: string; content: string }[] = [
+          {
+            role: "system",
+            content:
+              "You are a friendly real estate assistant for Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties. You specialize in Arcadia Homes Las Vegas and Summerlin West (89135). Be concise, warm, and professional. Always mention that users can contact Dr. Jan Duffy at (702) 500-0337 or DrDuffy@arcadiahomeslasvegas.com for personalized assistance.",
+          },
+          ...conversation.filter((m) => m?.role && m?.content),
+          { role: "user", content: prompt },
+        ];
+
+        const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${apiKey}`,
+            "HTTP-Referer": "https://www.arcadiahomeslasvegas.com",
+          },
+          body: JSON.stringify({
+            model: "anthropic/claude-3.5-haiku",
+            messages,
+            temperature: 0.7,
+            max_tokens: 500,
+          }),
+        });
+
+        if (response.ok) {
+          const data = (await response.json()) as { choices?: { message?: { content?: string } }[] };
+          const reply = data?.choices?.[0]?.message?.content?.trim();
+          if (reply) {
+            return res.json({ reply });
+          }
+        }
+      }
+
+      res.json({ reply: fallbackReply });
+    } catch {
+      res.status(500).json({ message: "Chat unavailable. Please call (702) 500-0337." });
+    }
+  });
+
   // Properties
   app.get("/api/properties", async (req, res) => {
     try {

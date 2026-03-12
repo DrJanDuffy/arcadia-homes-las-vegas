@@ -6,6 +6,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ExitIntentPopup } from "@/components/ExitIntentPopup";
+import { AIChatWidget } from "@/components/chat/AIChatWidget";
+import { CalendlyBadge } from "@/components/calendly/CalendlyBadge";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import Home from "@/pages/home";
 import Community from "@/pages/community";
@@ -84,6 +86,13 @@ function App() {
             <Footer />
           </div>
           <ExitIntentPopup />
+          <AIChatWidget />
+          <CalendlyBadge
+            url="https://calendly.com/drjanduffy/showing"
+            text="Schedule a showing"
+            color="#235d8f"
+            textColor="#ffffff"
+          />
           <Toaster />
         </TooltipProvider>
       </QueryClientProvider>

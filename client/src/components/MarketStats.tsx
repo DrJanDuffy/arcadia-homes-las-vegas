@@ -158,7 +158,7 @@ export function MarketStats() {
               href="/market-report" 
               className="inline-block bg-white text-primary font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl hover:scale-105 transform"
             >
-              Get Your Market Report
+              View Full Market Report
             </Link>
           </div>
         </div>
@@ -200,10 +200,10 @@ export function MarketStats() {
       <div className="container-max">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-            Arcadia Homes Las Vegas Market Report
+            Arcadia Homes Las Vegas &amp; Summerlin West Market
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Stay informed with the latest market trends and statistics for Arcadia Homes Las Vegas community.
+            Current market data for Arcadia Homes Las Vegas and Summerlin West 89135 from Berkshire Hathaway HomeServices Nevada Properties.
           </p>
         </div>
 
@@ -291,7 +291,7 @@ export function MarketStats() {
             href="/market-report" 
             className="inline-block bg-white text-primary font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl hover:scale-105 transform"
           >
-            Get Your Market Report
+            View Full Market Report
           </Link>
         </div>
       </div>

@@ -8,11 +8,10 @@ export function ContactCTA() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
-              Ready to Call Arcadia Homes Las Vegas Home?
+              Ready to Work with Dr. Jan Duffy?
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Let Dr. Jan Duffy guide you through your Arcadia Homes Las Vegas journey. From market analysis 
-              to closing, experience white-glove service every step of the way.
+              Whether you&apos;re buying or selling in Arcadia Homes Las Vegas, Dr. Jan Duffy is here to help with personalized luxury home services in Summerlin West.
             </p>
             
             {/* Contact Info */}
