@@ -102,10 +102,16 @@ If the live site shows a **blank white page** with only a small **red circular �
    - **main.tsx**: The root render is wrapped in `<ErrorBoundary>`, so any uncaught error in the app shows the “Something went wrong” panel instead of a blank screen.  
    - **index.html**: The `#root` div has a short “Loading…” message (inline styles) so something is visible until React mounts; if the main script never loads, that message remains.
 
-3. **If it still happens after redeploy**  
-   - Open DevTools (F12) → **Console** and note any red errors.  
-   - Open **Network**: ensure the main JS (e.g. `/assets/index-….js`) and CSS return **200**; if they return 404, fix the build/output path or redeploy.  
-   - Confirm the deployment is from the latest `main` and that the build completed successfully.
+3. **If you see “Loading…” for more than a few seconds**  
+   The app did not mount: the main script likely failed to load or run.  
+   - Open DevTools (F12) → **Network**, reload the page. Find the main script (e.g. `index-….js` under `/assets/`). If it returns **404**, the build output is not being served correctly.  
+   - In Vercel: set **Output Directory** to **`dist/public`** (Vite writes `index.html` and `assets/` here). Leave **Root Directory** blank so the build runs from the repo root. Redeploy.  
+   - In **Console**, note any red errors (e.g. chunk load failed, syntax error).  
+   - After ~6 seconds, the page shows a “This page is taking longer than usual” message and a **Refresh** button; use it after fixing deploy or network.
+
+4. **If it still happens after redeploy**  
+   - Confirm the deployment is from the latest `main` and that the build completed successfully.  
+   - Ensure no browser extension is blocking scripts (try an incognito window or another browser).
 
 ## 🔧 Production Checklist
 

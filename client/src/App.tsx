@@ -8,6 +8,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ExitIntentPopup } from "@/components/ExitIntentPopup";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { DeferredWidgets } from "@/components/DeferredWidgets";
 import Home from "@/pages/home";
 import Community from "@/pages/community";
 import Neighborhood from "@/pages/neighborhood";
@@ -34,8 +35,6 @@ import PrivacyPolicy from "@/pages/privacy-policy";
 import TermsOfService from "@/pages/terms-of-service";
 import NotFound from "@/pages/not-found";
 
-const AIChatWidget = lazy(() => import("@/components/chat/AIChatWidget").then((m) => ({ default: m.AIChatWidget })));
-const CalendlyBadge = lazy(() => import("@/components/calendly/CalendlyBadge").then((m) => ({ default: m.CalendlyBadge })));
 const Gallery = lazy(() => import("@/pages/gallery"));
 const FloorPlans = lazy(() => import("@/pages/floor-plans"));
 
@@ -90,15 +89,7 @@ function App() {
             <Footer />
           </div>
           <ExitIntentPopup />
-          <Suspense fallback={null}>
-            <AIChatWidget />
-            <CalendlyBadge
-              url="https://calendly.com/drjanduffy/showing"
-              text="Schedule a showing"
-              color="#235d8f"
-              textColor="#ffffff"
-            />
-          </Suspense>
+          <DeferredWidgets />
           <Toaster />
         </TooltipProvider>
       </QueryClientProvider>
