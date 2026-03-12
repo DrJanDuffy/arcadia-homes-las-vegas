@@ -305,7 +305,9 @@
     </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root" aria-live="polite">
+      <p style="text-align:center;color:#6b7280;padding:2rem;font-family:system-ui,sans-serif;">Loading…</p>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
     <!-- Replit dev banner: load only on Replit or localhost to avoid blocking production -->
     <script>

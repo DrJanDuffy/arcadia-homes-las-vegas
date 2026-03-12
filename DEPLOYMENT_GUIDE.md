@@ -90,6 +90,23 @@ If Google Search Console reports **Unparsable structured data → Duplicate uniq
 3. **Optional: Sanity-check live markup**  
    After deploy, open `https://www.arcadiahomeslasvegas.com/`, view source, and confirm the first `application/ld+json` block has only one `hasCredential` (the array). Or paste the URL into [validator.schema.org](https://validator.schema.org/) to confirm no duplicate property errors.
 
+## Blank page or small red “i” icon
+
+If the live site shows a **blank white page** with only a small **red circular “i”** (or similar) in the corner:
+
+1. **Cause**  
+   A JavaScript error can prevent the app from rendering. The “i” was from the Replit runtime-error overlay (dev-style) when it was enabled in production.
+
+2. **Fixes applied in code**  
+   - **vite.config.ts**: Replit error overlay (`runtimeErrorOverlay`) is enabled only in development or when `REPL_ID` is set. Production builds no longer inject it, so errors are handled by the app’s ErrorBoundary.  
+   - **main.tsx**: The root render is wrapped in `<ErrorBoundary>`, so any uncaught error in the app shows the “Something went wrong” panel instead of a blank screen.  
+   - **index.html**: The `#root` div has a short “Loading…” message (inline styles) so something is visible until React mounts; if the main script never loads, that message remains.
+
+3. **If it still happens after redeploy**  
+   - Open DevTools (F12) → **Console** and note any red errors.  
+   - Open **Network**: ensure the main JS (e.g. `/assets/index-….js`) and CSS return **200**; if they return 404, fix the build/output path or redeploy.  
+   - Confirm the deployment is from the latest `main` and that the build completed successfully.
+
 ## 🔧 Production Checklist
 
 - ✅ All contact forms capture leads
