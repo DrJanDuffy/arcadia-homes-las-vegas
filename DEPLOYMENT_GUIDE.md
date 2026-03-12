@@ -24,8 +24,10 @@
 2. **Configure Build Settings:**
    - Framework Preset: `Vite`
    - Build Command: `npm run build`
-   - Output Directory: `client/dist`
+   - Output Directory: `dist/public` (Vite outputs here per vite.config.ts; contains index.html and assets)
    - Install Command: `npm install`
+
+   The root `vercel.json` rewrites all non-file requests to `/index.html` so SPA routes (e.g. `/home-value`, `/about`) return 200 and are indexable by Google.
 
 3. **Set Environment Variables:**
    ```
