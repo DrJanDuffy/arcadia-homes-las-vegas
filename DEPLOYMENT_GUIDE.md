@@ -77,6 +77,19 @@ You'll need a PostgreSQL database. Options:
    - Monitor lead capture functionality
    - Set up email notifications for new leads
 
+## GSC: Duplicate unique property (structured data)
+
+If Google Search Console reports **Unparsable structured data → Duplicate unique property** on the homepage:
+
+1. **Confirm production is on the latest commit**  
+   The fix (single `hasCredential` in the first JSON-LD block) is in commit `a041ebf` or later. Ensure the live site is built from current `main`. If not, trigger a redeploy (e.g. Vercel: Project → Deployments → … on latest → Redeploy).
+
+2. **Validate fix in Search Console**  
+   In GSC: **Enhancements → Unparsable structured data → Duplicate unique property**. Open the issue, then use **Validate fix** so Google recrawls the affected URL and re-evaluates the structured data.
+
+3. **Optional: Sanity-check live markup**  
+   After deploy, open `https://www.arcadiahomeslasvegas.com/`, view source, and confirm the first `application/ld+json` block has only one `hasCredential` (the array). Or paste the URL into [validator.schema.org](https://validator.schema.org/) to confirm no duplicate property errors.
+
 ## 🔧 Production Checklist
 
 - ✅ All contact forms capture leads
