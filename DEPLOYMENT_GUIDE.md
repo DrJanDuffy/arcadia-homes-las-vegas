@@ -1,5 +1,14 @@
 # 🚀 Arcadia Homes Las Vegas - Deployment Guide
 
+## Get to a live site (minimal path)
+
+1. **Push the repo** to GitHub (this repo has `vercel.json` with `outputDirectory: "dist/public"` so Vercel serves the built app).
+2. **Vercel:** New Project → Import the GitHub repo. Use **Build Command** `npm run build`, **Output Directory** `dist/public` (or leave default — `vercel.json` sets it). Deploy.
+3. **Verify:** Open the deployment URL. You should see the full site (hero, nav, footer). If you see "This page is taking longer than usual," the deploy is still using the wrong output — confirm in Vercel project **Settings → General** that Output Directory is `dist/public` and redeploy.
+4. **Domain (optional):** In Vercel → Domains, add `arcadiahomeslasvegas.com` and point DNS as instructed.
+
+---
+
 ## Step 1: GitHub Backup
 
 1. **Create a new GitHub repository:**
@@ -24,7 +33,7 @@
 2. **Configure Build Settings:**
    - Framework Preset: `Vite`
    - Build Command: `npm run build`
-   - Output Directory: `dist/public` (Vite outputs here per vite.config.ts; contains index.html and assets)
+   - Output Directory: `dist/public` (also set in `vercel.json` as `outputDirectory` so deploys use the built app; required for the site to load instead of showing "Loading…")
    - Install Command: `npm install`
 
    The root `vercel.json` rewrites all non-file requests to `/index.html` so SPA routes (e.g. `/home-value`, `/about`) return 200 and are indexable by Google.
