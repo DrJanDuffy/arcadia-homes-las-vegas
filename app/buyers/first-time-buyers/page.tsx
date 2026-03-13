@@ -8,12 +8,7 @@ import {
   DollarSign,
   Key,
   CheckCircle,
-  Calendar,
-  FileText,
-  Users,
-  TrendingUp,
   Building,
-  Shield,
   HelpCircle,
 } from "lucide-react";
 import type { Metadata } from "next";

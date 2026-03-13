@@ -4,18 +4,12 @@ import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import {
   Phone,
-  Camera,
   Globe,
   DollarSign,
   TrendingUp,
   CheckCircle,
   BarChart,
   Users,
-  Home,
-  Clock,
-  Shield,
-  ArrowRight,
-  Award,
 } from "lucide-react";
 import type { Metadata } from "next";
 

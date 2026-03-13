@@ -13,6 +13,8 @@
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
     "validate": "npm run type-check && npm run lint && npm run format:check",
+    "audit": "npm audit",
+    "audit:fix": "npm audit fix",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:run": "vitest run",

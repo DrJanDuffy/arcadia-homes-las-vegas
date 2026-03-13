@@ -147,7 +147,7 @@ export class ClaudeCache {
   /**
    * Get from Redis (if configured)
    */
-  private async getFromRedis(key: string): Promise<CacheEntry | null> {
+  private async getFromRedis(_key: string): Promise<CacheEntry | null> {
     try {
       // Placeholder - implement with your Redis client
       // const redis = await getRedisClient();
@@ -163,7 +163,7 @@ export class ClaudeCache {
   /**
    * Set in Redis (if configured)
    */
-  private async setInRedis(key: string, entry: CacheEntry): Promise<void> {
+  private async setInRedis(_key: string, _entry: CacheEntry): Promise<void> {
     try {
       // Placeholder - implement with your Redis client
       // const redis = await getRedisClient();
@@ -176,7 +176,7 @@ export class ClaudeCache {
   /**
    * Get from Cloudflare KV (if configured)
    */
-  private async getFromCloudflareKV(key: string): Promise<CacheEntry | null> {
+  private async getFromCloudflareKV(_key: string): Promise<CacheEntry | null> {
     try {
       // Placeholder - implement with Cloudflare KV binding
       // const data = await env.CLAUDE_CACHE.get(key, 'json');
@@ -191,7 +191,7 @@ export class ClaudeCache {
   /**
    * Set in Cloudflare KV (if configured)
    */
-  private async setInCloudflareKV(key: string, entry: CacheEntry): Promise<void> {
+  private async setInCloudflareKV(_key: string, _entry: CacheEntry): Promise<void> {
     try {
       // Placeholder - implement with Cloudflare KV binding
       // await env.CLAUDE_CACHE.put(key, JSON.stringify(entry), {

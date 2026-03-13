@@ -8,7 +8,6 @@ import {
   Award, 
   Users, 
   Home, 
-  TrendingUp, 
   CheckCircle, 
   MapPin,
   Shield,

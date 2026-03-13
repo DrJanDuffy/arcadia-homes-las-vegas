@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any -- TODO: replace with concrete types in API responses */
 /**
  * Anthropic Claude API Client - Optimized
  * 

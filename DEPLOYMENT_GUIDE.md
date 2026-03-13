@@ -32,6 +32,14 @@ npm run build && npm run start
 
 ---
 
+## Security and audits
+
+- Run `npm run audit` before releases; address or document any accepted vulnerabilities.
+- Use `npm run audit:fix` for semver-compatible fixes; use `npm audit fix --force` only after verifying tests and build.
+- If `npm run audit:fix` fails due to peer dependency conflicts (e.g. with `--legacy-peer-deps` installs), some vulnerabilities may require major upgrades (Next.js, Sentry, wrangler, etc.) or documented acceptance.
+
+---
+
 ## NAP (match GBP)
 
 - **Agent:** Dr. Jan Duffy, License S.0197614.LLC, Berkshire Hathaway HomeServices Nevada Properties  

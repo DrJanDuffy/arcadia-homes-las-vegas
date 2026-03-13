@@ -6,12 +6,8 @@ import {
   Phone,
   Shield,
   Eye,
-  Building,
-  TrendingUp,
   Lock,
   Star,
-  Home as HomeIcon,
-  MapPin,
   CheckCircle,
   DollarSign,
 } from "lucide-react";

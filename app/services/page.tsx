@@ -15,8 +15,6 @@ import {
   CheckCircle,
   Award,
   Shield,
-  Clock,
-  Heart,
   ArrowRight,
 } from "lucide-react";
 import type { Metadata } from "next";

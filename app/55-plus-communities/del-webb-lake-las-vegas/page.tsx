@@ -5,7 +5,6 @@ import Link from "next/link";
 import {
   Phone,
   Waves,
-  Mountain,
   Home as HomeIcon,
   Star,
   Dumbbell,

@@ -17,12 +17,12 @@ export default function HeroSection() {
   useEffect(() => {
     // Don't animate if user prefers reduced motion
     if (prefersReducedMotion) return;
-    
+
     const intervalId = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
     }, 5000);
     return () => clearInterval(intervalId);
-  }, [prefersReducedMotion]);
+  }, [prefersReducedMotion, images.length]);
 
   return (
     <div className="relative w-full h-screen overflow-hidden">

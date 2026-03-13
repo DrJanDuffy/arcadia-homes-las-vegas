@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any -- TODO: replace with concrete types in API responses */
 /**
  * Follow Up Boss API Client - Optimized
  * 

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any -- TODO: replace with concrete types for form/event handlers */
 /**
  * Lead Capture Form - Optimized for FUB Integration
  * 

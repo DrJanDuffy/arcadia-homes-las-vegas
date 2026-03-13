@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any -- TODO: type webhook payloads from FUB API */
 /**
  * Follow Up Boss Webhook Handler
  * 
@@ -372,7 +373,7 @@ async function triggerPropertySearch(personId: number, neighborhood?: string) {
 /**
  * Verify webhook signature (implement if FUB provides signing)
  */
-function verifySignature(signature: string | null, body: any): boolean {
+function _verifySignature(_signature: string | null, _body: unknown): boolean {
   // Implement signature verification if FUB provides it
   // For now, rely on HTTPS and IP allowlisting
   return true;

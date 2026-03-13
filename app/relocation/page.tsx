@@ -4,8 +4,6 @@ import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { 
   Phone, 
-  Plane, 
-  MapPin, 
   Users, 
   CheckCircle, 
   Sun, 
@@ -14,7 +12,6 @@ import {
   Home,
   School,
   ArrowRight,
-  Car,
   Shield,
   Globe,
 } from "lucide-react";

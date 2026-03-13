@@ -15,7 +15,6 @@ import {
   TrendingUp,
   Users,
   Award,
-  Clock,
   ArrowRight,
 } from "lucide-react";
 import type { Metadata } from "next";

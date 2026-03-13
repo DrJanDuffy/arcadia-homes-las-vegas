@@ -18,7 +18,6 @@ import {
   propertySearchTemplate,
   homeValuationTemplate,
   customerSupportTemplate,
-  createCachedPrompt,
 } from '@/lib/claude/prompt-templates';
 
 // Initialize Claude client
@@ -50,7 +49,7 @@ export async function POST(request: NextRequest) {
 
     // Select prompt template
     const template = getTemplate(templateType);
-    const lastMessage = messages[messages.length - 1];
+    const _lastMessage = messages[messages.length - 1];
 
     // Check response cache first
     const cachedResponse = await defaultCache.get(messages, template.system);
@@ -71,7 +70,7 @@ export async function POST(request: NextRequest) {
         async start(controller) {
           try {
             for await (const chunk of claude.streamMessage({
-              messages: messages.map((m: any) => ({
+              messages: messages.map((m: { role: string; content: string }) => ({
                 role: m.role,
                 content: m.content,
               })),
@@ -100,7 +99,7 @@ export async function POST(request: NextRequest) {
 
     // Non-streaming response
     const response = await claude.sendMessage({
-      messages: messages.map((m: any) => ({
+      messages: messages.map((m: { role: string; content: string }) => ({
         role: m.role,
         content: m.content,
       })),
@@ -153,7 +152,7 @@ export async function POST(request: NextRequest) {
 /**
  * GET endpoint for cost statistics
  */
-export async function GET(request: NextRequest) {
+export async function GET(_request: NextRequest) {
   try {
     const stats = claude.getCostStats();
     const cacheStats = defaultCache.getStats();

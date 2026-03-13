@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any -- TODO: replace with concrete types for lead payloads */
 /**
  * Follow Up Boss Automation Utilities
  * 

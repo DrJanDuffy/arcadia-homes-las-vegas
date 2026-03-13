@@ -14,11 +14,8 @@ import {
   Heart,
   HelpCircle,
   Sun,
-  Trophy,
   Palmtree,
   CheckCircle,
-  Waves,
-  Mountain,
   Star,
   ArrowRight,
 } from "lucide-react";

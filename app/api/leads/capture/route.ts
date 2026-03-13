@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any -- TODO: type personData from FUB API shape */
 /**
  * Lead Capture API - Send leads to Follow Up Boss
  * 
@@ -270,7 +271,7 @@ function enrichSource(source: string | undefined, request: NextRequest): string 
       if (!refUrl.hostname.includes('arcadiahomeslasvegas.com')) {
         return `referral/${refUrl.hostname}`;
       }
-    } catch (e) {
+    } catch (_e) {
       // Invalid URL
     }
   }

@@ -1,8 +1,7 @@
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
-import Link from "next/link";
-import { TrendingUp, TrendingDown, Home, Calendar, DollarSign, BarChart, Phone } from "lucide-react";
+import { TrendingUp, TrendingDown, Home, DollarSign, BarChart, Phone } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

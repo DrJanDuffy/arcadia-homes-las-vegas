@@ -10,10 +10,8 @@ import {
   Clock,
   CheckCircle,
   AlertTriangle,
-  Home as HomeIcon,
   MapPin,
   Calendar,
-  Users,
   FileText,
   HelpCircle,
 } from "lucide-react";

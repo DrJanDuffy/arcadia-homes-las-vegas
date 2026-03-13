@@ -4,14 +4,9 @@ import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import {
   Phone,
-  MapPin,
-  Home as HomeIcon,
-  DollarSign,
   Users,
   Dumbbell,
   Trophy,
-  Heart,
-  Mountain,
   CheckCircle,
 } from "lucide-react";
 import type { Metadata } from "next";

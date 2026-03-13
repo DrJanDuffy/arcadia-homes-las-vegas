@@ -3,18 +3,11 @@ import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import {
   Phone,
-  Home,
   MapPin,
   DollarSign,
   TrendingUp,
   Search,
-  Filter,
-  Heart,
-  Building2,
-  Users,
-  Clock,
   CheckCircle,
-  Star,
   ArrowRight,
 } from "lucide-react";
 import type { Metadata } from "next";
@@ -195,7 +188,7 @@ export default function ListingsPage() {
               expect at different price points in the current January 2026 market.
             </p>
             <div className="space-y-4">
-              {priceRanges.map((price, index) => (
+              {priceRanges.map((price, _index) => (
                 <div
                   key={price.range}
                   className="bg-white rounded-lg p-4 border border-slate-200 flex flex-col md:flex-row md:items-center justify-between"

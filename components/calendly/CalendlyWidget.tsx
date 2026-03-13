@@ -2,6 +2,14 @@
 
 import { useEffect, useRef } from "react";
 
+declare global {
+  interface Window {
+    Calendly?: {
+      initInlineWidget: (opts: { url: string; parentElement: HTMLElement }) => void;
+    };
+  }
+}
+
 interface CalendlyWidgetProps {
   url?: string;
   minWidth?: string;
@@ -18,7 +26,7 @@ export default function CalendlyWidget({
   useEffect(() => {
     // Ensure Calendly script is loaded and widget is initialized
     const initWidget = () => {
-      if (typeof window !== "undefined" && (window as any).Calendly && widgetRef.current) {
+      if (typeof window !== "undefined" && window.Calendly && widgetRef.current) {
         // Clear any existing content
         widgetRef.current.innerHTML = "";
         
@@ -33,7 +41,7 @@ export default function CalendlyWidget({
         widgetRef.current.appendChild(widgetDiv);
         
         // Initialize the widget
-        (window as any).Calendly.initInlineWidget({
+        window.Calendly.initInlineWidget({
           url: url,
           parentElement: widgetDiv,
         });
@@ -41,12 +49,12 @@ export default function CalendlyWidget({
     };
 
     // Try to initialize immediately if Calendly is already loaded
-    if ((window as any).Calendly) {
+    if (window.Calendly) {
       initWidget();
     } else {
       // Wait for the script to load
       const checkCalendly = setInterval(() => {
-        if ((window as any).Calendly) {
+        if (window.Calendly) {
           clearInterval(checkCalendly);
           initWidget();
         }

@@ -10,12 +10,8 @@ import {
   Eye, 
   CheckCircle,
   Home,
-  MapPin,
   DollarSign,
-  Award,
   ArrowRight,
-  Camera,
-  Users,
 } from "lucide-react";
 import type { Metadata } from "next";
 
