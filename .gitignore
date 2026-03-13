@@ -1,48 +1,64 @@
-# Dependencies
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Environment variables (CRITICAL - protects your secrets)
+# ===================
+# Dependencies
+# ===================
+/node_modules
+/.pnp
+.pnp.js
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# ===================
+# Testing
+# ===================
+/coverage
+/api/test.py
+/api/temp.txt
+/api/.env
+*.test.js.snap
+
+# ===================
+# Next.js
+# ===================
+/.next/
+/out/
+.next
+
+# ===================
+# Production Build
+# ===================
+/build
+/dist
+/.output
+/.vercel/output
+
+# ===================
+# Environment Files
+# ===================
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+.env*.local
 
-# Build outputs
-dist/
-build/
-client/dist/
-/public/
-
-# Database files
-*.db
-*.sqlite
-*.sqlite3
-
-# Logs
-logs
-*.log
-
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
-
-# Coverage directory used by tools like istanbul
-coverage/
-
-# IDE and editor files
-.vscode/
-.idea/
+# ===================
+# IDE & Editor
+# ===================
+.idea
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
 *.swp
 *.swo
 *~
 
-# OS generated files
+# ===================
+# OS Generated
+# ===================
 .DS_Store
 .DS_Store?
 ._*
@@ -50,17 +66,71 @@ coverage/
 .Trashes
 ehthumbs.db
 Thumbs.db
+desktop.ini
 
-# Temporary files
+# ===================
+# Debug & Logs
+# ===================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log
+*.log
+logs/
+
+# ===================
+# TypeScript
+# ===================
+*.tsbuildinfo
+next-env.d.ts
+tsconfig.tsbuildinfo
+
+# ===================
+# Python
+# ===================
+__pycache__
+*.py[cod]
+*$py.class
+.Python
+venv/
+ENV/
+
+# ===================
+# Vercel
+# ===================
+.vercel
+
+# ===================
+# Security
+# ===================
+*.pem
+*.key
+*.cert
+*.p12
+secrets.json
+credentials.json
+# MCP config may contain Notion integration token — use .cursor/mcp.json.example as template
+.cursor/mcp.json
+
+# ===================
+# Sentry
+# ===================
+.sentryclirc
+.sentry-*
+
+# ===================
+# Misc
+# ===================
+/real-estate-template
+*.bak
 *.tmp
 *.temp
 
-# Replit specific files
-.replit
-.upm
-
-# Vercel deployment files
-.vercel
-
-# TypeScript cache
-*.tsbuildinfo
+# ===================
+# Large Media (use Git LFS if needed)
+# ===================
+# Uncomment if you want to ignore large files
+# *.mp4
+# *.mov
+# *.avi
