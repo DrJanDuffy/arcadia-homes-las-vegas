@@ -12,6 +12,14 @@
 2. **Vercel:** New Project → Import repo. **Framework Preset: Next.js.** Leave Build Command and Output Directory at defaults. Deploy.
 3. **Domain:** Add **www.arcadiahomeslasvegas.com** as primary; redirect **arcadiahomeslasvegas.com** → www.
 
+### Required: Root Directory must be empty
+
+This repo is a **Next.js app at the repo root** (no `client/` subfolder). In Vercel:
+
+- **Settings → General → Root Directory** must be **empty** (or `.`).
+- If Root Directory is set to `client`, the build will fail with: *"The specified Root Directory 'client' does not exist."*
+- Root Directory cannot be set in `vercel.json`; it is a project setting only.
+
 ---
 
 ## Local
