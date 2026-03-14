@@ -183,9 +183,9 @@ export default function Home() {
                 Arcadia in Summerlin®
               </h2>
               <p className="text-lg text-slate-700 mb-6">
-                The newest neighborhood in award-winning Summerlin®—single-family homes by Sekisui
-                House with nature-inspired, sustainable design. Three floorplans in Grand Park
-                village. Learn more and explore availability.
+                Boutique gated community of 40 luxury single-family homes in Summerlin West 89135.
+                Japanese-inspired, eco-friendly design in Grand Park village. Three floor plans from
+                $1.5M–$2M+. Learn more and explore availability.
               </p>
               <Link
                 href="/neighborhoods/arcadia"

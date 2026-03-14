@@ -181,10 +181,10 @@ export default function Footer() {
               <li className="flex items-center">
                 <Phone className="h-5 w-5 mr-3 text-blue-400 flex-shrink-0" />
                 <Link
-                  href="tel:+17025001942"
+                  href="tel:+17025000337"
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
-                  (702) 500-1942
+                  (702) 500-0337
                 </Link>
               </li>
               <li className="flex items-center">
@@ -193,7 +193,7 @@ export default function Footer() {
                   href="mailto:DrDuffy@arcadiahomeslasvegas.com"
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
-                  Homes@HeyBerkshire.com
+                  DrDuffy@arcadiahomeslasvegas.com
                 </Link>
               </li>
             </ul>
@@ -216,11 +216,17 @@ export default function Footer() {
               </Link>
             </div>
           </div>
-          <p className="text-slate-500 text-xs mt-4 text-center">
-            Dr. Jan Duffy, REALTOR® | License S.0197614.LLC | Berkshire Hathaway HomeServices Nevada
-            Properties
-          </p>
-          <p className="text-slate-600 text-xs mt-2 text-center max-w-3xl mx-auto">
+          <div className="text-slate-400 text-sm mt-4 text-center space-y-1">
+            <p className="font-semibold text-slate-300">Dr. Jan Duffy | NV License #S.0197614.LLC</p>
+            <p>Berkshire Hathaway HomeServices Nevada Properties</p>
+            <p>Serving Las Vegas since 2008 · Summerlin West luxury specialist</p>
+            <p>
+              <a href="tel:+17025000337" className="hover:text-white">(702) 500-0337</a>
+              {" · "}
+              <a href="https://www.arcadiahomeslasvegas.com" className="hover:text-white">arcadiahomeslasvegas.com</a>
+            </p>
+          </div>
+          <p className="text-slate-600 text-xs mt-4 text-center max-w-3xl mx-auto">
             When you work with a Berkshire Hathaway HomeServices agent, you're backed by a name
             synonymous with trust, ethical standards, and financial strength.
           </p>

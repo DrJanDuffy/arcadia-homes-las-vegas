@@ -63,3 +63,8 @@ On-site schema, NAP, sitemap, and EEAT are implemented per the March 2026 plan. 
 - **Authority:** Backlinks and brand mentions from trusted, relevant sites (local news, real estate, BHHS); document and pursue outreach.
 - **Reviews:** Google and niche directories; maintain volume, sentiment, recency; keep NAP consistent everywhere.
 - **Profiles:** Strong, consistent branded profiles (LinkedIn, YouTube, etc.); ensure `sameAs` in schema matches live profile URLs.
+
+### Image alt text (Arcadia and local pages)
+
+- **Arcadia images:** Use the pattern `[Subject] – Arcadia luxury new construction, Summerlin West Las Vegas 89135, Grand Park Village` (e.g. "Great room – Arcadia luxury new construction, Summerlin West Las Vegas 89135, Grand Park Village").
+- Apply to all Arcadia page images for accessibility and GEO.

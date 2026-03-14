@@ -24,8 +24,8 @@ const neighborhoods = [
     slug: "arcadia",
     medianPrice: "From $1.5M",
     priceChange: "New",
-    description: "Arcadia by Sekisui House—newest neighborhood in Summerlin®. Single-family homes in Grand Park village, three floorplans.",
-    highlights: ["Summerlin®", "Sekisui House", "Grand Park Village", "New Construction", "Wellness-Focused"],
+    description: "Boutique gated community of 40 luxury single-family homes in Summerlin West 89135. Grand Park village, Japanese-inspired design, $1.5M–$2M+.",
+    highlights: ["Summerlin West 89135", "Grand Park Village", "40 Homes", "New Construction", "Wellness-Focused"],
     bestFor: "Luxury new construction, wellness-focused living, Summerlin buyers",
   },
   {

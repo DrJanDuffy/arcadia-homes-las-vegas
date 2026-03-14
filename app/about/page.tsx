@@ -198,7 +198,7 @@ export default function AboutPage() {
                       className="flex items-center text-slate-700 hover:text-blue-600"
                     >
                       <Mail className="h-5 w-5 mr-3 text-blue-600" />
-                      Homes@HeyBerkshire.com
+                      DrDuffy@arcadiahomeslasvegas.com
                     </a>
                     <div className="flex items-start text-slate-700">
                       <MapPin className="h-5 w-5 mr-3 text-blue-600 mt-0.5" />
@@ -212,6 +212,18 @@ export default function AboutPage() {
                       Mon-Fri 9am-6pm, Sat 10am-4pm, Sun by appointment
                     </div>
                   </div>
+                </div>
+
+                {/* Authority block */}
+                <div className="bg-blue-50 border border-blue-100 rounded-lg p-6">
+                  <p className="font-semibold text-slate-900">Dr. Jan Duffy | NV License #S.0197614.LLC</p>
+                  <p className="text-slate-700 mt-1">Berkshire Hathaway HomeServices Nevada Properties</p>
+                  <p className="text-slate-600 text-sm mt-1">Serving Las Vegas since 2008 · Summerlin West luxury specialist</p>
+                  <p className="text-sm mt-2">
+                    <a href="tel:+17025000337" className="text-blue-600 hover:underline font-medium">(702) 500-0337</a>
+                    {" · "}
+                    <a href="https://www.arcadiahomeslasvegas.com" className="text-blue-600 hover:underline">arcadiahomeslasvegas.com</a>
+                  </p>
                 </div>
 
                 {/* Quote */}
