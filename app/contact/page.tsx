@@ -39,12 +39,39 @@ const contactSchema = {
   },
 };
 
+const contactFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How can I contact Dr. Jan Duffy?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Call or text (702) 500-0337, or email DrDuffy@arcadiahomeslasvegas.com. Office address: 9406 W Lake Mead Blvd, Suite 100, Las Vegas, NV 89134. Available Monday–Friday 9am–6pm, Saturday 10am–4pm, Sunday by appointment.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is there a fee to talk with a Berkshire Hathaway HomeServices agent?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. Consultations with Dr. Jan Duffy are free. Buyer representation is typically free (commission paid by seller). For sellers, commission is discussed at the listing appointment.",
+      },
+    },
+  ],
+};
+
 export default function ContactPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactFaqSchema) }}
       />
       <Navbar />
       <main className="pt-24 pb-16">
@@ -101,7 +128,7 @@ export default function ContactPage() {
                       href="mailto:DrDuffy@arcadiahomeslasvegas.com"
                       className="text-blue-600 hover:text-blue-700 font-medium"
                     >
-                      Homes@HeyBerkshire.com
+                      DrDuffy@arcadiahomeslasvegas.com
                     </a>
                     <p className="text-sm text-slate-500 mt-1">
                       Typically respond within 2 hours
@@ -279,7 +306,7 @@ export default function ContactPage() {
                 <Mail className="h-8 w-8 mr-4" />
                 <div className="text-left">
                   <div className="font-bold text-lg">Send Email</div>
-                  <div className="text-slate-300">Homes@HeyBerkshire.com</div>
+                  <div className="text-slate-300">DrDuffy@arcadiahomeslasvegas.com</div>
                 </div>
               </a>
             </div>

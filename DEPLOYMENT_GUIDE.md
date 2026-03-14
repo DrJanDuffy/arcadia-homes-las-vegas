@@ -45,3 +45,21 @@ npm run build && npm run start
 - **Agent:** Dr. Jan Duffy, License S.0197614.LLC, Berkshire Hathaway HomeServices Nevada Properties  
 - **Phone:** (702) 500-0337 | **Email:** DrDuffy@arcadiahomeslasvegas.com  
 - **Primary URL:** https://www.arcadiahomeslasvegas.com  
+
+---
+
+## SEO, AEO & GEO (March 2026)
+
+On-site schema, NAP, sitemap, and EEAT are implemented per the March 2026 plan. Use this section for ongoing keyword/content and off-site work.
+
+### Keyword and content strategy
+
+- **Prioritize “AI-immune” terms:** Service and local queries (e.g. “realtor Summerlin,” “homes for sale Arcadia,” “Dr. Jan Duffy”) keep driving blue links and local pack; focus content and titles on these.
+- **Informational content:** For top-of-funnel posts, assume some zero-click from AI Overviews; use for brand/EEAT and link clearly to service/contact and local pages.
+- **Categorize by intent:** (1) Traditional SEO (local/service), (2) AEO (featured snippet / one clear answer), (3) GEO (factual, citable). Focus effort on (1) and (2).
+
+### Off-site checklist (Authority, Experience, Trust)
+
+- **Authority:** Backlinks and brand mentions from trusted, relevant sites (local news, real estate, BHHS); document and pursue outreach.
+- **Reviews:** Google and niche directories; maintain volume, sentiment, recency; keep NAP consistent everywhere.
+- **Profiles:** Strong, consistent branded profiles (LinkedIn, YouTube, etc.); ensure `sameAs` in schema matches live profile URLs.

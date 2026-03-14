@@ -175,6 +175,28 @@ export default function Home() {
           </div>
         </section>
 
+        {/* About Arcadia */}
+        <section className="py-12 md:py-16 bg-slate-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+                Arcadia in Summerlin®
+              </h2>
+              <p className="text-lg text-slate-700 mb-6">
+                The newest neighborhood in award-winning Summerlin®—single-family homes by Sekisui
+                House with nature-inspired, sustainable design. Three floorplans in Grand Park
+                village. Learn more and explore availability.
+              </p>
+              <Link
+                href="/neighborhoods/arcadia"
+                className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition-colors"
+              >
+                Learn more about Arcadia
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Market Stats Section */}
         <section className="py-16 bg-slate-900 text-white">
           <div className="container mx-auto px-4">

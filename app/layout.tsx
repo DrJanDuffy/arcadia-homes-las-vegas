@@ -12,6 +12,7 @@ import SchemaScript from "@/components/SchemaScript";
 import {
   generateRealEstateAgentSchema,
   generateWebSiteSchema,
+  generatePersonSchema,
   combineSchemas,
 } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
@@ -69,10 +70,11 @@ export const viewport = {
   themeColor: "#0f172a",
 };
 
-// Combined site-wide schemas using the schema utility
+// Combined site-wide schemas: RealEstateAgent (Org/LocalBusiness), WebSite, Person for AEO/GEO
 const siteWideSchemas = combineSchemas(
   generateRealEstateAgentSchema(),
-  generateWebSiteSchema()
+  generateWebSiteSchema(),
+  generatePersonSchema()
 );
 
 export default function RootLayout({

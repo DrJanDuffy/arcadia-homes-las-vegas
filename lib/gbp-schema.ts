@@ -13,7 +13,7 @@ export const businessInfo = {
   },
   phone: {
     display: "(702) 500-0337",
-    tel: "+17025001942",
+    tel: "+17025000337",
   },
   email: "DrDuffy@arcadiahomeslasvegas.com",
   url: "https://www.arcadiahomeslasvegas.com",

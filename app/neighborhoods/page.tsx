@@ -20,6 +20,15 @@ export const metadata: Metadata = {
 
 const neighborhoods = [
   {
+    name: "Arcadia",
+    slug: "arcadia",
+    medianPrice: "From $1.5M",
+    priceChange: "New",
+    description: "Arcadia by Sekisui House—newest neighborhood in Summerlin®. Single-family homes in Grand Park village, three floorplans.",
+    highlights: ["Summerlin®", "Sekisui House", "Grand Park Village", "New Construction", "Wellness-Focused"],
+    bestFor: "Luxury new construction, wellness-focused living, Summerlin buyers",
+  },
+  {
     name: "Summerlin",
     slug: "summerlin",
     medianPrice: "$625,000",

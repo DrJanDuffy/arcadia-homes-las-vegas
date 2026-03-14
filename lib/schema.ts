@@ -95,7 +95,7 @@ export function generateRealEstateAgentSchema() {
     logo: `${BASE_URL}/images/dr-jan-duffy.jpg`,
     image: `${BASE_URL}/images/dr-jan-duffy.jpg`,
     description: siteConfig.description,
-    telephone: "+1-702-500-1942",
+    telephone: "+17025000337",
     email: agentInfo.email,
     priceRange: "$385K - $10M+",
     address: {
@@ -188,6 +188,36 @@ export function generateRealEstateAgentSchema() {
       "First-time homebuyers",
     ],
     slogan: "Your Berkshire Hathaway HomeServices expert in Las Vegas",
+  };
+}
+
+/**
+ * Generate Person schema for Dr. Jan Duffy (AEO/GEO entity resolution)
+ */
+export function generatePersonSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${BASE_URL}/about#agent`,
+    name: agentInfo.name,
+    jobTitle: agentInfo.title,
+    description:
+      "Dr. Jan Duffy is a REALTOR® with Berkshire Hathaway HomeServices Nevada Properties, serving Las Vegas since 2008. Specialist in Arcadia, Summerlin West, luxury homes, and new construction.",
+    url: `${BASE_URL}/about`,
+    email: agentInfo.email,
+    telephone: "+17025000337",
+    worksFor: {
+      "@type": "Organization",
+      name: agentInfo.brokerage,
+      url: BASE_URL,
+    },
+    sameAs: Object.values(socialProfiles),
+    hasCredential: {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "Real Estate License",
+      recognizedBy: { "@type": "Organization", name: "Nevada Real Estate Division" },
+      identifier: agentInfo.license,
+    },
   };
 }
 

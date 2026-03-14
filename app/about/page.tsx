@@ -22,7 +22,8 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "About Dr. Jan Duffy | Arcadia & Summerlin West Real Estate",
   description:
-    "Meet Dr. Jan Duffy, your trusted Berkshire Hathaway HomeServices Nevada Properties agent. Serving Arcadia and Summerlin West (89135). Call (702) 500-0337.",
+    "Dr. Jan Duffy is a REALTOR® with Berkshire Hathaway HomeServices Nevada Properties, serving Las Vegas since 2008. Meet your trusted agent for Arcadia and Summerlin West. Call (702) 500-0337.",
+  authors: [{ name: "Dr. Jan Duffy", url: "https://www.arcadiahomeslasvegas.com/about" }],
   keywords: [
     "Dr. Jan Duffy",
     "Berkshire Hathaway HomeServices agent",
@@ -131,8 +132,11 @@ export default function AboutPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               Meet Your Berkshire Hathaway HomeServices Agent
             </h1>
+            <p className="text-xl text-slate-700 font-medium mb-4">
+              Dr. Jan Duffy is a REALTOR® with Berkshire Hathaway HomeServices Nevada Properties, serving Las Vegas since 2008.
+            </p>
             <p className="text-xl text-slate-600">
-              Dr. Jan Duffy has been serving Las Vegas since 2008—backed by the most
+              Backed by the most
               trusted name in real estate. Whether you're buying, selling, investing, or 
               relocating, you'll receive expert guidance with integrity and professionalism.
             </p>
