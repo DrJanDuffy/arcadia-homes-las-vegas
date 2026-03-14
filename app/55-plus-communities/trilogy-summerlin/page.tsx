@@ -9,6 +9,7 @@ import {
   Dumbbell,
   CheckCircle,
   Sparkles,
+  Home as HomeIcon,
 } from "lucide-react";
 import type { Metadata } from "next";
 

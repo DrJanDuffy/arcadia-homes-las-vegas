@@ -271,7 +271,7 @@ function enrichSource(source: string | undefined, request: NextRequest): string 
       if (!refUrl.hostname.includes('arcadiahomeslasvegas.com')) {
         return `referral/${refUrl.hostname}`;
       }
-    } catch (_e) {
+    } catch {
       // Invalid URL
     }
   }
