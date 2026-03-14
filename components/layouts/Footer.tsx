@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { agentInfo, officeInfo, siteConfig } from "@/lib/site-config";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -173,27 +174,27 @@ export default function Footer() {
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 mr-3 text-blue-400 flex-shrink-0 mt-0.5" />
                 <span className="text-slate-300 text-sm">
-                  9406 W Lake Mead Blvd, Suite 100
+                  {officeInfo.address.street}
                   <br />
-                  Las Vegas, NV 89134
+                  {officeInfo.address.city}, {officeInfo.address.state} {officeInfo.address.zip}
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 mr-3 text-blue-400 flex-shrink-0" />
                 <Link
-                  href="tel:+17025000337"
+                  href={agentInfo.phoneTel}
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
-                  (702) 500-0337
+                  {agentInfo.phone}
                 </Link>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 mr-3 text-blue-400 flex-shrink-0" />
                 <Link
-                  href="mailto:DrDuffy@arcadiahomeslasvegas.com"
+                  href={`mailto:${agentInfo.email}`}
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
-                  DrDuffy@arcadiahomeslasvegas.com
+                  {agentInfo.email}
                 </Link>
               </li>
             </ul>
@@ -217,13 +218,13 @@ export default function Footer() {
             </div>
           </div>
           <div className="text-slate-400 text-sm mt-4 text-center space-y-1">
-            <p className="font-semibold text-slate-300">Dr. Jan Duffy | NV License #S.0197614.LLC</p>
-            <p>Berkshire Hathaway HomeServices Nevada Properties</p>
+            <p className="font-semibold text-slate-300">{agentInfo.name} | NV License #{agentInfo.license}</p>
+            <p>{agentInfo.brokerage}</p>
             <p>Serving Las Vegas since 2008 · Summerlin West luxury specialist</p>
             <p>
-              <a href="tel:+17025000337" className="hover:text-white">(702) 500-0337</a>
+              <a href={agentInfo.phoneTel} className="hover:text-white">{agentInfo.phone}</a>
               {" · "}
-              <a href="https://www.arcadiahomeslasvegas.com" className="hover:text-white">arcadiahomeslasvegas.com</a>
+              <a href={siteConfig.url} className="hover:text-white">{siteConfig.url.replace("https://", "").replace("www.", "")}</a>
             </p>
           </div>
           <p className="text-slate-600 text-xs mt-4 text-center max-w-3xl mx-auto">
