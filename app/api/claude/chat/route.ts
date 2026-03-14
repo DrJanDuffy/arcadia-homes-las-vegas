@@ -11,7 +11,7 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-import { ClaudeClient } from '@/lib/claude/client';
+import { ClaudeClient, type ClaudeMessage } from '@/lib/claude/client';
 import { defaultCache } from '@/lib/claude/cache';
 import {
   realEstateAgentTemplate,
@@ -70,8 +70,8 @@ export async function POST(request: NextRequest) {
         async start(controller) {
           try {
             for await (const chunk of claude.streamMessage({
-              messages: messages.map((m: { role: string; content: string }) => ({
-                role: m.role,
+              messages: messages.map((m: { role: string; content: string }): ClaudeMessage => ({
+                role: m.role === 'assistant' ? 'assistant' : 'user',
                 content: m.content,
               })),
               systemPrompt: template.system,
@@ -99,8 +99,8 @@ export async function POST(request: NextRequest) {
 
     // Non-streaming response
     const response = await claude.sendMessage({
-      messages: messages.map((m: { role: string; content: string }) => ({
-        role: m.role,
+      messages: messages.map((m: { role: string; content: string }): ClaudeMessage => ({
+        role: m.role === 'assistant' ? 'assistant' : 'user',
         content: m.content,
       })),
       systemPrompt: template.system,
