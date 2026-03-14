@@ -9,6 +9,7 @@ declare global {
         textColor: string;
         branding?: boolean;
       }) => void;
+      initInlineWidget: (opts: { url: string; parentElement: HTMLElement }) => void;
     };
   }
 }

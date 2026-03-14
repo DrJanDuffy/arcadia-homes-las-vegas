@@ -1,14 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-
-declare global {
-  interface Window {
-    Calendly?: {
-      initInlineWidget: (opts: { url: string; parentElement: HTMLElement }) => void;
-    };
-  }
-}
+import "./types";
 
 interface CalendlyWidgetProps {
   url?: string;
